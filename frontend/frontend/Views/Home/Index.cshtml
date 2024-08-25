@@ -1,0 +1,121 @@
+﻿@{
+    Layout = ViewBag.Layout ?? "_Layout";
+}
+<div class="page-header">
+    <h3 class="page-title"> Form elements </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form class="form-sample">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Agreement Number</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="agreement_number" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Branch ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="branch_id" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.BPKB</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="bpkb_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB In</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="bpkb_date_in" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control"  name="bpkb_date" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.Faktur</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="faktur_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal Faktur</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="faktur_date" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nomor Polisi</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="police_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Lokasi Penyimpanan</label>
+                                    <div class="col-sm-9">
+                                        <select class="js-example-basic-single" name="location_id" style="width:100%">
+                                            <option value="">Select Lokasi Penyimpanan</option>                                    
+                                        </select>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <br />
+                                <button type="submit" class="btn btn-gradient-primary me-2 col-sm-3">Submit</button>
+                                <button class="btn btn-light col-sm-3">Cancel</button>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

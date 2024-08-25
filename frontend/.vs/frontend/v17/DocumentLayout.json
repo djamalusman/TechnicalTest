@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Me\\loker\\frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|E:\\Me\\loker\\frontend\\frontend\\views\\bpkb\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|solutionrelative:frontend\\views\\bpkb\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|e:\\me\\loker\\frontend\\frontend\\controllers\\bpkbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|solutionrelative:frontend\\controllers\\bpkbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|e:\\me\\loker\\frontend\\frontend\\models\\generaloutputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|solutionrelative:frontend\\models\\generaloutputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|E:\\Me\\loker\\frontend\\frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|solutionrelative:frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|e:\\me\\loker\\frontend\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E53E8B4-015C-431F-A8AC-E22E242534B6}|frontend\\frontend.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Me\\loker\\frontend\\frontend\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "frontend\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Me\\loker\\frontend\\frontend\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "frontend\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAA1wCsAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T08:11:03.236Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BpkbController.cs",
+              "DocumentMoniker": "E:\\Me\\loker\\frontend\\frontend\\Controllers\\BpkbController.cs",
+              "RelativeDocumentMoniker": "frontend\\Controllers\\BpkbController.cs",
+              "ToolTip": "E:\\Me\\loker\\frontend\\frontend\\Controllers\\BpkbController.cs",
+              "RelativeToolTip": "frontend\\Controllers\\BpkbController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAA6wJsAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T15:03:05.444Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Me\\loker\\frontend\\frontend\\Views\\Bpkb\\Index.cshtml",
+              "RelativeDocumentMoniker": "frontend\\Views\\Bpkb\\Index.cshtml",
+              "ToolTip": "E:\\Me\\loker\\frontend\\frontend\\Views\\Bpkb\\Index.cshtml",
+              "RelativeToolTip": "frontend\\Views\\Bpkb\\Index.cshtml",
+              "ViewState": "AQIAAL8BAAAAAAAAAAAYwNoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T15:07:54.978Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeneralOutputModel.cs",
+              "DocumentMoniker": "E:\\Me\\loker\\frontend\\frontend\\Models\\GeneralOutputModel.cs",
+              "RelativeDocumentMoniker": "frontend\\Models\\GeneralOutputModel.cs",
+              "ToolTip": "E:\\Me\\loker\\frontend\\frontend\\Models\\GeneralOutputModel.cs",
+              "RelativeToolTip": "frontend\\Models\\GeneralOutputModel.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAcwBEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T03:58:06.221Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Me\\loker\\frontend\\frontend\\Program.cs",
+              "RelativeDocumentMoniker": "frontend\\Program.cs",
+              "ToolTip": "E:\\Me\\loker\\frontend\\frontend\\Program.cs",
+              "RelativeToolTip": "frontend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T04:02:13.965Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

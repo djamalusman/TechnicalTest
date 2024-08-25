@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2YvQFHYmYp9++R2Gv10La2nJmK6coGLP3C1YvvVHD4+68e5JRdXdGAAKD7AQ3VJyY9dJX3kcevarw6cFjRlM+g==",
+  "success": true,
+  "projectFilePath": "E:\\Me\\loker\\frontend\\frontend\\frontend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\djama\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

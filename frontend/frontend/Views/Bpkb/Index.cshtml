@@ -1,0 +1,527 @@
+﻿@model frontend.Models.Bpkbstore
+@{
+    Layout = ViewBag.Layout ?? "_Layout";
+    var username = ViewBag.UserName;
+}
+
+<style>
+    .popup-alert {
+        position: fixed;
+        top: 70px;
+        right: 1px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
+        max-width: 300px;
+    }
+
+    .popup-alert-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .popup-alert-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .popup-alert-success {
+        border-color: #28a745;
+        color: #28a745;
+    }
+
+    .popup-alert-error {
+        border-color: #dc3545;
+        color: #dc3545;
+    }
+
+
+</style>
+<div class="page-header">
+    <h3 class="page-title"> Form elements </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Basic Table</h4>
+                <p class="card-description">
+                    Add class <code>.table</code>
+                </p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Agreement Numbe</th>
+                            <th>Branch ID</th>
+                            <th>No.BPKB</th>
+                            <th>Tanggal BPKB In</th>
+                            <th>Tanggal BPKB</th>
+                            <th>No.Faktur</th>
+                            <th>Tanggal Faktur</th>
+                            <th>Nomor Polisi</th>
+                            <th>Lokasi Penyimpanan</th>
+                            <th>Di buat oleh</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body">
+                        <!-- Data akan dimuat di sini -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form id="mainForm" class="form-sample"  enctype="multipart/form-data">
+                    <input asp-for="created_by" type="text" hidden value="@username" class="form-control" />
+                    <input type="hidden" asp-for="idupdate" value=" ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Agreement Number</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="agreement_number" type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Branch ID</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="branch_id" type="text" id="branch_id" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.BPKB</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_no" type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB In</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_date_in" class="form-control" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_date" class="form-control" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.Faktur</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="faktur_no" type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal Faktur</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="faktur_date" class="form-control" type="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nomor Polisi</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="police_no" type="text" id="police_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Lokasi Penyimpanan</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="location_id" id="location_id" class="js-example-basic-single form-control" style="width:100%">
+                                        <option value="">Select Lokasi Penyimpanan</option>
+                                        <!-- Add your options here -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <br />
+                                <button type="submit" class="btn btn-gradient-primary me-2 col-sm-3">Submit</button>
+                                <button type="button" class="btn btn-light col-sm-3" id="cancelButton">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Form Edit (Mulai Disembunyikan) -->
+                <form id="editForm" class="form-sample" style="display:none;"  enctype="multipart/form-data">
+                    <input asp-for="created_by" type="text" hidden value="@username" class="form-control" />
+                    <input type="hidden" asp-for="idupdate" id="idupdate" value="" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Agreement Number</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="agreement_number" type="text" id="agreement_number" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Branch ID</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="branch_id" type="text" id="branch_id" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.BPKB</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_no" type="text" id="bpkb_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB In</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_date_in" class="form-control" type="date" id="bpkb_date_in" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal BPKB</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="bpkb_date" class="form-control" type="date" id="bpkb_date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No.Faktur</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="faktur_no" type="text" id="faktur_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tanggal Faktur</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="faktur_date" class="form-control" type="date" id="faktur_date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nomor Polisi</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="police_no" type="text" id="police_no" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Lokasi Penyimpanan</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="location_id" id="location_idEdit" class="js-example-basic-single form-control" style="width:100%">
+                                        <option value="">Select Lokasi Penyimpanan</option>
+                                        <!-- Add your options here -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <br />
+                                <button type="submit" class="btn btn-gradient-primary me-2 col-sm-3" id="editForm">Update</button>
+                                <button type="button" class="btn btn-light col-sm-3" id="cancelEditButton">Cancel Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="popup-alert" class="popup-alert" style="display: none;">
+        <div class="popup-alert-content">
+            <span id="popup-alert-message"></span>
+            <button id="popup-alert-close" class="popup-alert-close">&times;</button>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        
+        $.ajax({
+            url: '@Url.Action("GetData", "Bpkb")',
+            method: 'GET',
+            success: function (data) {
+                var tableBody = $('#data-table-body');
+                tableBody.empty();
+
+                $.each(data, function (index, item) {
+                    var row = '<tr>' +
+                        '<td>' + (index + 1) + '</td>' +  // Menambahkan nomor urut
+                        '<td>' + item.agreement_number + '</td>' +
+                        '<td>' + item.branch_id + '</td>' +
+                        '<td>' + item.bpkb_no + '</td>' +
+                        '<td>' + item.bpkb_date_in + '</td>' +
+                        '<td>' + item.bpkb_date + '</td>' +
+                        '<td>' + item.faktur_no + '</td>' +
+                        '<td>' + item.faktur_date + '</td>' +
+                        '<td>' + item.police_no + '</td>' +
+                        '<td>' + item.location_name + '</td>' +
+                        '<td>' + item.created_by + '</td>' +
+                        '<td><i class="fa fa-edit edit-btn" data-id="' + item.agreement_number + '"></i></td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Failed to retrieve data:', error);
+            }
+        });
+
+        
+
+
+        // Fungsi untuk memformat tanggal jika diperlukan
+        function formatDate(dateString) {
+            var date = new Date(dateString);
+            return date.toLocaleDateString(); // Atau format sesuai keperluan
+        }
+
+        
+    });
+
+
+    $(document).on('click', '.edit-btn', function () {
+        var id = $(this).data('id'); // Ambil ID dari tombol edit
+
+        // Lakukan AJAX request untuk mendapatkan data detail berdasarkan ID
+        $.ajax({
+            url: '@Url.Action("GetById", "Bpkb")',  // Pastikan URL ini sesuai dengan rute di Controller Anda
+            method: 'GET',
+            data: { id: id },
+            success: function (data) {
+                if (data.length > 0) {
+                    var item = data[0]; // Karena data.result adalah List, ambil elemen pertama
+
+                    // Isi form edit dengan data yang diterima
+                    $('#editForm').find('#idupdate').val(item.agreement_number);
+                    $('#editForm').find('#agreement_number').val(item.agreement_number);
+                    $('#editForm').find('#branch_id').val(item.branch_id);
+                    $('#editForm').find('#bpkb_no').val(item.bpkb_no);
+                    $('#editForm').find('#bpkb_date_in').val(item.bpkb_date_in);
+                    $('#editForm').find('#bpkb_date').val(item.bpkb_date);
+                    $('#editForm').find('#faktur_no').val(item.faktur_no);
+                    $('#editForm').find('#faktur_date').val(item.faktur_date);
+                    $('#editForm').find('#police_no').val(item.police_no);
+                    $('#editForm').find('#location_idEdit').val(item.location_name);
+
+                    // Menyembunyikan form utama dan menampilkan form edit
+                    $('#mainForm').hide();
+                    $('#editForm').show();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Failed to retrieve data:', error);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '@Url.Action("GetLocations", "Bpkb")', // Pastikan URL sesuai dengan controller dan method
+            type: 'GET',
+            success: function (data) {
+                var select = $('select[name="location_id"]');
+                select.empty(); // Kosongkan opsi yang ada
+
+                select.append('<option value="">Select Lokasi Penyimpanan</option>');
+
+                $.each(data, function (index, location) {
+                    select.append('<option value="' + location.location_id + '">' + location.location_name + '</option>');
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Failed to retrieve locations:', error);
+            }
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to limit the number of characters in an input field
+        function limitCharacters(input, maxLength) {
+            input.addEventListener('input', function () {
+                if (this.value.length > maxLength) {
+                    this.value = this.value.slice(0, maxLength);
+                }
+            });
+        }
+
+        // Get input fields
+        const branchIdInput = document.getElementById('branch_id');
+        const locationIdInput = document.getElementById('location_id');
+        const policeNoInput = document.getElementById('police_no');
+
+        // Set character limits
+        limitCharacters(branchIdInput, 10);
+        limitCharacters(locationIdInput, 10);
+        limitCharacters(policeNoInput, 20);
+    });
+    
+    // create
+    $(document).ready(function () {
+        // Menangani pengiriman form edit
+        $('#mainForm').on('submit', function (event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            var formData = new FormData(this); // Mengambil data dari form
+
+            $.ajax({
+                url: '@Url.Action("Store", "Bpkb")', // Ganti dengan URL yang sesuai
+                type: 'POST',
+                data: formData,
+                processData: false, // Jangan memproses data
+                contentType: false, // Jangan mengatur contentType
+                success: function (response) {
+                    // Menampilkan pop-up alert sukses
+                    $('#popup-alert').addClass('popup-alert-success').show();
+                    $('#popup-alert-message').text('Success: Create data');
+
+                    // Menyembunyikan pop-up alert dan me-refresh halaman setelah 3 detik
+                    setTimeout(function () {
+                        $('#popup-alert').hide();
+                        location.reload(); // Me-refresh halaman
+                    }, 3000); // 3000 milidetik = 3 detik
+                },
+                error: function (xhr, status, error) {
+                    // Menampilkan pop-up alert gagal
+                    $('#popup-alert').addClass('popup-alert-error').show();
+                    $('#popup-alert-message').text('Error: Create data');
+
+                    // Menyembunyikan pop-up alert dan me-refresh halaman setelah 3 detik
+                    setTimeout(function () {
+                        $('#popup-alert').hide();
+                        location.reload(); // Me-refresh halaman
+                    }, 3000); // 3000 milidetik = 3 detik
+                }
+            });
+        });
+    });
+    // end create
+
+
+    // update
+    $(document).ready(function () {
+        $('#editForm').on('submit', function (event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            var formData = new FormData(this); // Mengambil data dari form
+
+            $.ajax({
+                url: '@Url.Action("Update", "Bpkb")', // Ganti dengan URL yang sesuai
+                type: 'POST',
+                data: formData,
+                processData: false, // Jangan memproses data
+                contentType: false, // Jangan mengatur contentType
+                success: function (response) {
+                    // Menampilkan pop-up alert sukses
+                    $('#popup-alert').addClass('popup-alert-success').show();
+                    $('#popup-alert-message').text('Success: Update data');
+
+                    // Menyembunyikan pop-up alert dan me-refresh halaman setelah 3 detik
+                    setTimeout(function () {
+                        $('#popup-alert').hide();
+                        location.reload(); // Me-refresh halaman
+                    }, 3000); // 3000 milidetik = 3 detik
+                },
+                error: function (xhr, status, error) {
+                    // Menampilkan pop-up alert gagal
+                    $('#popup-alert').addClass('popup-alert-error').show();
+                    $('#popup-alert-message').text('Error: Update data');
+
+                    // Menyembunyikan pop-up alert dan me-refresh halaman setelah 3 detik
+                    setTimeout(function () {
+                        $('#popup-alert').hide();
+                        location.reload(); // Me-refresh halaman
+                    }, 3000); // 3000 milidetik = 3 detik
+                }
+            });
+        });
+
+        // Menutup pop-up alert
+        $('#popup-alert-close').on('click', function () {
+            $('#popup-alert').hide();
+        });
+    });
+    // end update
+    
+    $('#cancelButton').on('click', function () {
+        // Menghapus nilai dari semua inputan di dalam form
+        $('form input').val('');
+        $('form select').val('').trigger('change'); // Untuk mengosongkan dropdown
+    });
+    $('#cancelEditButton').click(function () {
+        // Menyembunyikan form edit dan menampilkan form utama
+        $('#editForm').hide();
+        $('#mainForm').show();
+    });
+
+</script>
