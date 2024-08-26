@@ -371,7 +371,7 @@
                     $('#editForm').find('#faktur_no').val(item.faktur_no);
                     $('#editForm').find('#faktur_date').val(item.faktur_date);
                     $('#editForm').find('#police_no').val(item.police_no);
-                    $('#editForm').find('#location_idEdit').val(item.location_name);
+                    $('#editForm').find('#location_idEdit').val(item.location_id).trigger('change');
 
                     // Menyembunyikan form utama dan menampilkan form edit
                     $('#mainForm').hide();
@@ -385,6 +385,7 @@
     });
 
     $(document).ready(function () {
+
         $.ajax({
             url: '@Url.Action("GetLocations", "Bpkb")', // Pastikan URL sesuai dengan controller dan method
             type: 'GET',
@@ -402,33 +403,7 @@
                 console.error('Failed to retrieve locations:', error);
             }
         });
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to limit the number of characters in an input field
-        function limitCharacters(input, maxLength) {
-            input.addEventListener('input', function () {
-                if (this.value.length > maxLength) {
-                    this.value = this.value.slice(0, maxLength);
-                }
-            });
-        }
-
-        // Get input fields
-        const branchIdInput = document.getElementById('branch_id');
-        const locationIdInput = document.getElementById('location_id');
-        const policeNoInput = document.getElementById('police_no');
-
-        // Set character limits
-        limitCharacters(branchIdInput, 10);
-        limitCharacters(locationIdInput, 10);
-        limitCharacters(policeNoInput, 20);
-    });
-    
-    // create
-    $(document).ready(function () {
-        // Menangani pengiriman form edit
+      
         $('#mainForm').on('submit', function (event) {
             event.preventDefault(); // Mencegah form dari pengiriman default
 
@@ -464,12 +439,7 @@
                 }
             });
         });
-    });
-    // end create
-
-
-    // update
-    $(document).ready(function () {
+    
         $('#editForm').on('submit', function (event) {
             event.preventDefault(); // Mencegah form dari pengiriman default
 
@@ -510,9 +480,32 @@
         $('#popup-alert-close').on('click', function () {
             $('#popup-alert').hide();
         });
+
     });
-    // end update
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to limit the number of characters in an input field
+        function limitCharacters(input, maxLength) {
+            input.addEventListener('input', function () {
+                if (this.value.length > maxLength) {
+                    this.value = this.value.slice(0, maxLength);
+                }
+            });
+        }
+
+        // Get input fields
+        const branchIdInput = document.getElementById('branch_id');
+        const locationIdInput = document.getElementById('location_id');
+        const policeNoInput = document.getElementById('police_no');
+
+        // Set character limits
+        limitCharacters(branchIdInput, 10);
+        limitCharacters(locationIdInput, 10);
+        limitCharacters(policeNoInput, 20);
+    });
     
+ 
     $('#cancelButton').on('click', function () {
         // Menghapus nilai dari semua inputan di dalam form
         $('form input').val('');
