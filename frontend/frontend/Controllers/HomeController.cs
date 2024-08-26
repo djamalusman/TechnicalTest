@@ -32,6 +32,7 @@ namespace frontend.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            
             if (!ModelState.IsValid)
             {
                 ViewBag.Layout = "_LoginLayout";
@@ -72,10 +73,11 @@ namespace frontend.Controllers
             }
         }
 
-        [HttpPost]
+        
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("JWToken"); // Menghapus token dari session
+            
+            HttpContext.Session.Remove("UserName"); // Menghapus token dari session
             return RedirectToAction("Login");
         }
 
